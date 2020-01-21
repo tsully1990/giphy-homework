@@ -27,19 +27,9 @@ function displayRacerInfo() {
             racerImage.attr("data-still", still);
             racerImage.attr("data-animate", animated);
             racerImage.attr("data-state", "still");
-            racerImage.addClass("racer-image")
-            // Displaying the rating
+            racerImage.addClass("racer-image");
             racerDiv.append(pOne);
-            // Retrieving the URL for the image
-            // var imgURL = results[i].images.fixed_height_still.url;
-
-            // Creating an element to hold the image
-            // var image = $("<img>").attr("src", imgURL);
-
-            // Appending the image
             racerDiv.append(racerImage);
-
-            // Putting the entire movie above the previous movies
             $("#buttons-view").prepend(racerDiv);
         }
     });
@@ -51,13 +41,9 @@ function renderButtons() {
     $("#buttons-view").empty();
     for (var i = 0; i < racers.length; i++) {
         var a = $("<button>");
-        // Adding a class
         a.addClass("racer-btn");
-        // Adding a data-attribute with a value of the racer at index i
         a.attr("data-name", racers[i]);
-        // Providing the button's text with a value of the racer at index i
         a.text(racers[i]);
-        // Adding the button to the HTML
         $("#buttons-view").prepend(a);
     }
 }
