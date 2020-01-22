@@ -15,11 +15,10 @@ function displayRacerInfo() {
         var results = response.data;
         // var rating = results[i].rating;
         for (var i = 0; i < results.length; i++) {
-            // Creating a div to hold the movie
         var racerDiv = $("<div class='racer'>");
             console.log(results);
             var rating = results[i].rating;
-            var pOne = $("<p>").text("Rating: " + rating);
+            var rate = $("<p>").text("Rating: " + rating);
             var animated = results[i].images.fixed_height.url;
             var still = results[i].images.fixed_height_still.url;
             var racerImage = $("<img>");
@@ -28,7 +27,7 @@ function displayRacerInfo() {
             racerImage.attr("data-animate", animated);
             racerImage.attr("data-state", "still");
             racerImage.addClass("racer-image");
-            racerDiv.append(pOne);
+            racerDiv.append(rate);
             racerDiv.append(racerImage);
             $("#buttons-view").prepend(racerDiv);
         }
